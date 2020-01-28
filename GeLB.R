@@ -65,7 +65,7 @@ Prediction.Models <- (mclapply(1:1000,
 
                           #### STEP 3 
                           ## Generate Predictive Model   
-                          fitControl <- trainControl(## 10-fold CV
+                          fitControl <- trainControl(
                              method = "repeatedcv",
                              number = 10,
                              repeats = 10)
@@ -76,7 +76,6 @@ Prediction.Models <- (mclapply(1:1000,
                           mtryGrid <- data.frame(.mtry=mtryVals)
 
                           set.seed(420)
-                          registerDoMC(cores = 10) 
 
                           RF.obj <- train(class ~ .,
                                            data = training.data, 
