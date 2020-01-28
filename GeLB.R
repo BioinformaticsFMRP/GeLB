@@ -96,10 +96,8 @@ Prediction.Models <- (mclapply(1:1000,
                           #### STEP 5
                           ## Apply Predictive model to classify test set
                           Test.set$RF.score <- predict(RF.obj,Test.set,type = "prob")$glioma
-
-                          Test.set$probeID <- rownames(Test.set)
                           Test.set$class <- c(rep("non.glioma",length(non.glioma.TestSet)),rep("glioma",length(glioma.TestSet)))
-                          Test.set <- Test.set[,c("probeID","RF.score","class")]
+                          Test.set <- Test.set[,c("RF.score","class")]
 
                           #### STEP 6
                           ## Store RF score
