@@ -105,8 +105,8 @@ Prediction.Models <- (mclapply(1:1000,
                         }, mc.cores=cores))
 
 Prediction.Models.df <- bind_cols(Prediction.Models)
-cols <- seq(from=2,to=ncol(Prediction.Models.df),by=3)
-Prediction.Models.df <- Prediction.Models.df[,c(3,cols)]
+cols <- seq(from=1,to=ncol(Prediction.Models.df),by=2)
+Prediction.Models.df <- Prediction.Models.df[,c(2,cols)]
 
 #### STEP 7 
 ## Select the signature+model that correctly classifies Glioma and Non-glioma with 100% accuracy 
